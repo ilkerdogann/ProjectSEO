@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Customer
+    public class Shipper 
     {
         [Key]
-        public int CustomerID { get; set; }
-        public string CustomerName { get; set; }
-        public string CustomerMail { get; set; }
-        public string CustomerPassword { get; set; }
+        public int ShipperID { get; set; }
     }
 }

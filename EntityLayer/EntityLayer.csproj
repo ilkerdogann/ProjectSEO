@@ -53,6 +53,7 @@
     <Compile Include="Concrete\Customer.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\Seller.cs" />
+    <Compile Include="Concrete\Shipper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
