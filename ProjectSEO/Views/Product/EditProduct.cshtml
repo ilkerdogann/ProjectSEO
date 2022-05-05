@@ -8,7 +8,8 @@
 <h2>Ürün Güncelle</h2>
 @using (Html.BeginForm("EditProduct", "Product", FormMethod.Post))
 {
-    <div claass="form-group">
+    @Html.HiddenFor(x => x.ProductID)
+    <div class="form-group">
         @Html.Label("Ürün İsmi")
         @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
         <br />
@@ -26,6 +27,9 @@
         <br />
         @Html.Label("Ürün Görsel")
         @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
+        <br />
+        @Html.Label("Category Name")
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
         <br />
         <button class="btn btn-success">Güncelle</button>
     </div>
