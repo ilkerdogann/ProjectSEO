@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.ProductAdd
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AddGame</h2>
+<br />
+<form class="form-group" action="AddProduct" asp-controller="Product" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        @Html.Label("Ürün İsmi")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+        @Html.Label("Ürün Açıklama")
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+        <br />
+        @*@Html.Label("Ürün Anahtar Kelime")
+        @Html.TextBoxFor(x => x., new { @class = "form-control" })
+        <br />*@
+        @Html.Label("Ürün Fiyat")
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        <br />
+        @Html.Label("Ürün Stok")
+        @Html.TextBoxFor(x => x.Stock, new { @class = "form-control" })
+        <br />
+        @Html.Label("Ürün Görsel")
+        @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control", @type = "file"})
+        @*<input type="file" name="ImageURL"/>*@
+        <br />
+        @Html.Label("Kategori")
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Yeni Ürün Ekle</button>
+    </div>
+</form>
+
