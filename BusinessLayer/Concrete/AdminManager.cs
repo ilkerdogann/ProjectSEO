@@ -25,12 +25,12 @@ namespace BusinessLayer.Concrete
 
         public void AdminDelete(Admin admin)
         {
-            _adminDal.Insert(admin);
+            _adminDal.Delete(admin);
         }
 
         public void AdminUpdate(Admin admin)
         {
-            _adminDal.Insert(admin);
+            _adminDal.Update(admin);
         }
 
         public Admin GetByID(int id)

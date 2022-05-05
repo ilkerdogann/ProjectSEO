@@ -1,13 +1,13 @@
-﻿using System;
+﻿using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace EntityLayer.Concrete
+namespace ProjectSEO.Models
 {
-    public class Product 
+    public class Product
     {
         [Key]
         public int ProductID { get; set; }
