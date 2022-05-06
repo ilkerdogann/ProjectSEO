@@ -42,5 +42,10 @@ namespace BusinessLayer.Concrete
         {
             return _productDal.List();
         }
+
+        public List<Product> GetListByProductID(int id)
+        {
+            return _productDal.List(x => x.ProductID == id);
+        }
     }
 }

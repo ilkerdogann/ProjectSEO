@@ -88,5 +88,11 @@ namespace ProjectSEO.Controllers
             var products = pm.GetList().Where(a => a.ProductKey == key || a.ProductName.Contains(key)).ToList();
             return View(products);
         }
+
+        public ActionResult ContentByProduct(int id)
+        {
+            var contentValues = pm.GetListByProductID(id);
+            return View(contentValues);
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace BusinessLayer.Abstract
         Product GetByID(int id);
         void ProductDelete(Product product);
         void ProductUpdate(Product product);
+        List<Product> GetListByProductID(int id);
     }
 }
