@@ -67,7 +67,7 @@ namespace ProjectSEO.Controllers
             {
                 var extension = Path.GetExtension(p.ImageURL.FileName);
                 var newimagename = Guid.NewGuid() + extension;
-                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/resimler/", newimagename);
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "ProjectSEO/images/", newimagename);
                 var stream = new FileStream(location, FileMode.Create);
                 p.ImageURL.CopyTo(stream);
                 f.ProductImage = newimagename;
