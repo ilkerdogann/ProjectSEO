@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,9 @@ namespace ProjectSEO.Models
         public int Price { get; set; }
         public IFormFile ImageURL { get; set; }
         public int Stock { get; set; }
-        public int CategoryID { get; set; }
+        public int CategoryId { get; set; }
+
+        public virtual Category Category { get; set; }
+
     }
 }

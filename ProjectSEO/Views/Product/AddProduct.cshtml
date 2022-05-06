@@ -1,11 +1,11 @@
-﻿@model EntityLayer.Concrete.ProductAdd
+﻿@model ProjectSEO.Models.ProductAdd
 
 @{
     ViewBag.Title = "AddProduct";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>AddGame</h2>
+<h2>Ürün Ekle</h2>
 <br />
 <form class="form-group" action="AddProduct" asp-controller="Product" method="post" enctype="multipart/form-data">
     <div class="form-group">
@@ -29,7 +29,7 @@
         @*<input type="file" name="ImageURL"/>*@
         <br />
         @Html.Label("Kategori")
-        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
         <br />
         <button class="btn btn-info">Yeni Ürün Ekle</button>
     </div>

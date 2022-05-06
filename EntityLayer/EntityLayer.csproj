@@ -114,7 +114,6 @@
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Customer.cs" />
     <Compile Include="Concrete\Product.cs" />
-    <Compile Include="Concrete\ProductAdd.cs" />
     <Compile Include="Concrete\Seller.cs" />
     <Compile Include="Concrete\Shipper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

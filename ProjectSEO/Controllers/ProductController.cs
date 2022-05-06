@@ -10,6 +10,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using ProjectSEO.Models;
 
 namespace ProjectSEO.Controllers
 {
@@ -76,6 +77,7 @@ namespace ProjectSEO.Controllers
             f.ProductPrice = p.Price;
             f.ProductQuantity = p.Stock;
             f.ProductComment = p.Description;
+            f.CategoryID = p.CategoryId;
             pm.ProductAdd(f);
             return RedirectToAction("Index");
         }
