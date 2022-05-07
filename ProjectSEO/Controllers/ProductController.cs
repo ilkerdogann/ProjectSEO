@@ -90,6 +90,7 @@ namespace ProjectSEO.Controllers
             return View(products);
         }
 
+        [Route("Product/ContentByProduct/{id}/{name}/{key}")]
         public ActionResult ContentByProduct(int id)
         {
             var contentValues = pm.GetListByProductID(id);
