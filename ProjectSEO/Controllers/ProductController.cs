@@ -11,6 +11,7 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using ProjectSEO.Models;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ProjectSEO.Controllers
 {
@@ -93,6 +94,62 @@ namespace ProjectSEO.Controllers
         {
             var contentValues = pm.GetListByProductID(id);
             return View(contentValues);
+        }
+
+        [HttpGet]
+        public ActionResult UploadExcel()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UploadExcel(HttpPostedFileBase excelFile)
+        {
+            if (excelFile == null
+            || excelFile.ContentLength == 0)
+            {
+                ViewBag.Error = "Lütfen dosya seçimi yapınız.";
+                return View();
+            }
+            else
+            {
+                if (excelFile.FileName.EndsWith("xls")
+                || excelFile.FileName.EndsWith("xlsx"))
+                {
+                    string path = Server.MapPath("~/Content/" + excelFile.FileName);
+                    if (System.IO.File.Exists(path))
+                    {
+                        System.IO.File.Delete(path);
+                    }
+
+                    excelFile.SaveAs(path);
+                    Excel.Application application = new Excel.Application();
+                    Excel.Workbook workbook = application.Workbooks.Open(path);
+                    Excel.Worksheet worksheet = workbook.ActiveSheet;
+                    Excel.Range range = worksheet.UsedRange;
+
+                    List<Product> localList = new List<Product>();
+
+                    for (int i = 2; i <= range.Rows.Count; i++)
+                    {
+                        Product lm = new Product();
+                        lm.ProductID = Convert.ToInt32(((Excel.Range)range.Cells[i, 1]).Text);
+                        lm.ProductName = ((Excel.Range)range.Cells[i, 2]).Text;
+                        lm.ProductComment = ((Excel.Range)range.Cells[i, 3]).Text;
+                        lm.ProductKey = ((Excel.Range)range.Cells[i, 4]).Text;
+                        localList.Add(lm);
+                    }
+
+                    application.Quit();
+                    ViewBag.Model = localList;
+                    return View("ListExcel");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+
         }
     }
 }

@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concrete
+@model List<Product>
+
+@{
+    ViewBag.Title = "ListExcel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ürün Getir</h2>
+
+<table cellpadding="2" cellspacing="2" border="1">
+    <tr>
+        <th>Üürn Id</th>
+        <th>Ürün Adı</th>
+        <th>Ürün Açıklaması</th>
+        <th>Ürün Anahtar Kelimesi</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.ProductName</td>
+            <td>@item.ProductComment</td>
+            <td>@item.ProductKey</td>
+        </tr>
+    }
+</table>
+
