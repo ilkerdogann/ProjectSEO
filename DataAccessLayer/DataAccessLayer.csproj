@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\ICombineDal.cs" />
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="EntityFramework\EfCombineDal.cs" />
     <Compile Include="EntityFramework\EfCustomerDal.cs" />
     <Compile Include="EntityFramework\EfProductDal.cs" />
     <Compile Include="EntityFramework\EfSellerDal.cs" />

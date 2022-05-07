@@ -20,5 +20,7 @@ namespace EntityLayer.Concrete
         public int CategoryID { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public ICollection<Combine> Combines { get; set; }
     }
 }

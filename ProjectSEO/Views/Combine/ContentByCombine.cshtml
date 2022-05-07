@@ -1,10 +1,11 @@
 ﻿@using EntityLayer.Concrete
-@model List<Product>
+@model List<Combine>
 
 @{
-    ViewBag.Title = "ContentByProduct";
+    ViewBag.Title = "ContentByCombine";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 
 <html>
 <body class="hold-transition sidebar-mini">
@@ -14,7 +15,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Ürünler</h1>
+                    <h1>Sana Özel Kombin</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -32,9 +33,9 @@
                                 <div class="card-body pt-0">
                                     <div class="row">
                                         <div class="col-7">
-                                            <h2 class="lead"><b>@item.ProductName</b></h2>
-                                            <p class="text-muted text-sm">@item.ProductComment </p>
-                                            <ul class="ml-4 mb-0 fa-ul text-muted">
+                                            <h2 class="lead"><b>@item.CombineName</b></h2>
+                                            <p class="text-muted text-sm">@item.CombineDescription </p>
+                                            @*<ul class="ml-4 mb-0 fa-ul text-muted">
                                                 <a href="@Url.Action("GetProducts", "Product", new { key = item.ProductKey })" class="btn btn-sm btn-outline-danger">
                                                 <li class="small"><span class="fa-li"><i class="fas fa-lg fa-key"></i></span> @item.ProductKey</li>
                                                 </a>
@@ -44,25 +45,21 @@
                                             </ul>
                                             <ul class="ml-4 mb-0 fa-ul text-muted">
                                                 <li class="small"><span class="fa-li"><i class="fas fa-lg fa-hourglass"></i></span> Stok: @item.ProductQuantity adet kaldı!</li>
-                                            </ul>
+                                            </ul>*@
                                         </div>
-                                        <div class="col-5 text-center">
+                                        @*<div class="col-5 text-center">
                                             <img alt="" class="img-circle img-fluid" @item.ProductImage>
-                                        </div>
+                                        </div>*@
                                     </div>
                                 </div>
                                 <div class="card-footer">
                                     <div class="text-right">
-                                        <a href="/Product/EditProduct/@item.ProductID" class="btn btn-sm bg-teal">
-                                            <i class="fas fa-plus"> Ürün Güncelle</i>
-                                        </a>
                                         <a href="/Product/ProductAdd/@item.ProductID" class="btn btn-sm btn-primary">
                                             <i class="fas fa-shopping-cart"> Sepete Ekle</i>
                                         </a>
-                                        <br />
-                                        <a href="@Url.Action("ContentByCombine", "Combine", new { combineId = 1 })" class="btn btn-sm btn-warning">
+                                        @*<a href="@Url.Action("Index", "Product", new { combineId = 1 })" class="btn btn-sm btn-primary">
                                             <i class="fas fa-shopping-cart"> Sana Özel Kombin Ürünlerini Gör :)</i>
-                                        </a>
+                                        </a>*@
                                     </div>
                                 </div>
                             </div>
