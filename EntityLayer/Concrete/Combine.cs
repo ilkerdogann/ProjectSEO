@@ -13,6 +13,8 @@ namespace EntityLayer.Concrete
         public int CombineID { get; set; }
         public string CombineName { get; set; }
         public string CombineDescription { get; set; }
+        public string CombineImage { get; set; }
+        public int CombinePrice { get; set; }
         public int ProductID { get; set; }
 
 

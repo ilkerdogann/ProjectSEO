@@ -35,21 +35,21 @@
                                         <div class="col-7">
                                             <h2 class="lead"><b>@item.CombineName</b></h2>
                                             <p class="text-muted text-sm">@item.CombineDescription </p>
-                                            @*<ul class="ml-4 mb-0 fa-ul text-muted">
-                                                <a href="@Url.Action("GetProducts", "Product", new { key = item.ProductKey })" class="btn btn-sm btn-outline-danger">
+                                            <!--<ul class="ml-4 mb-0 fa-ul text-muted">-->
+                                                @*<a href="@Url.Action("GetProducts", "Product", new { key = item.ProductKey })" class="btn btn-sm btn-outline-danger">
                                                 <li class="small"><span class="fa-li"><i class="fas fa-lg fa-key"></i></span> @item.ProductKey</li>
-                                                </a>
-                                            </ul>
+                                                </a>*@
+                                            <!--</ul>-->
                                             <ul class="ml-4 mb-0 fa-ul text-muted">
-                                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-credit-card"></i></span> Fiyat: @item.ProductPrice tl</li>
+                                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-credit-card"></i></span> Fiyat: @item.CombinePrice tl</li>
                                             </ul>
-                                            <ul class="ml-4 mb-0 fa-ul text-muted">
+                                            @*<ul class="ml-4 mb-0 fa-ul text-muted">
                                                 <li class="small"><span class="fa-li"><i class="fas fa-lg fa-hourglass"></i></span> Stok: @item.ProductQuantity adet kaldı!</li>
                                             </ul>*@
                                         </div>
-                                        @*<div class="col-5 text-center">
-                                            <img alt="" class="img-circle img-fluid" @item.ProductImage>
-                                        </div>*@
+                                        <div class="col-5 text-center">
+                                            <img alt="" class="img-circle img-fluid" @item.CombineImage>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="card-footer">
